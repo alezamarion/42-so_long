@@ -1,4 +1,6 @@
 NAME = so_long
+IMG_DIR = assets/img
+XPM_DIR = textures
 
 LIBFT_DIR = libraries/libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -8,23 +10,20 @@ MLX = $(MLX_DIR)/libmlx.a
 
 RM = rm -rf
 
-XPM_DIR = textures
-IMG_DIR = assets/img
 SRC_DIR = src
 OBJ_DIR = obj
 HEADERS = src/so_long.h
 
 INCLUDE_DIR = includes
 
-SRC_FILES = so_long.c read_map.c map_render.c draw_image.c init_window.c	\
-			init_image.c print_map.c map_utils.c
+SRC_FILES = so_long.c read_map.c print_map.c map_utils.c init_game.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
-LIBFLAGS = -lft -lXext -lX11 -lmlx -lm
+LIBFLAGS = -lft -lXext -lX11 -lmlx
 
 all: $(NAME)
 
@@ -44,10 +43,10 @@ $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
 run:
-	./so_long "assets/maps/map_2.ber"
+	./so_long
 
 img:
-	convert $(IMG_DIR)/*.jpg -set filename:base "%[basename]" "%[filename:base].xpm" && mv *.xpm $(XPM_DIR)
+	convert $(IMG_DIR)/*.jpg -set filename:base "%[basename]" "%[filename:base].xpm" && mv *.xpm $(XPM_DIR)	
 
 clean:
 	$(RM) $(OBJ)
@@ -59,4 +58,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: clean fclean all ree
