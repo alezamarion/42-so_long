@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:43:47 by azamario          #+#    #+#             */
-/*   Updated: 2021/09/25 16:16:47 by azamario         ###   ########.fr       */
+/*   Updated: 2021/09/25 19:09:10 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,24 @@ Hooking is used for many purposes, including debugging and extending functionali
 
 */
 
-int main(void)
+int main(int argc, char **argv)
 {
+    if (argc == 2)
+    {
+        t_game  game;
 
-    t_game  game;
-    char    **map;
+        game.mlx = mlx_init();
 
-    map = read_map("assets/maps/map_2.ber");
-    init_game(&game);
-    map_counter(map, &game);
-    print_map(map);
+        game.map = read_map(argv[1]);
+        map_counter(game.map, &game);
+        init_window(&game);
+        print_map(game.map); 
 
-    return (0);
+        initialize_image(&game);
+        map_render(game.map, &game);
+      
+        mlx_loop(game.mlx);
+    }
 
 /*
     void    *mlx_ptr;
