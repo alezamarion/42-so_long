@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 21:33:04 by azamario          #+#    #+#             */
-/*   Updated: 2021/09/25 19:15:33 by azamario         ###   ########.fr       */
+/*   Updated: 2021/09/28 21:25:01 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,16 @@
 
 # define SPRITE_SIZE 32
 
-# define FILE_WALL "textures/0.xpm"
+# define FILE_WALL "textures/1.xpm"
 # define FILE_EMPTY "textures/0.xpm"
-# define FILE_COLLECTIBLE "textures/0.xpm"
-# define FILE_EXIT "textures/0.xpm"
-# define FILE_PLAYER "textures/0.xpm"
+# define FILE_COLLECTIBLE "textures/C.xpm"
+# define FILE_EXIT "textures/E.xpm"
+# define FILE_PLAYER "textures/P.xpm"
 
 typedef struct s_game
 {
     void    *img;
     void    *mlx;
-    void    *window;
     char    **map;
     void    *window_ptr;
     int     window_width;
