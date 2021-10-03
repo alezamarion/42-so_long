@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:43:47 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/02 19:35:34 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/02 21:53:02 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,6 @@ void    game_init(t_game *game)
     game->x = 0;
     game->y = 0;    
 }
-
-void move_right(t_game *game)
-{
-    int i;
-    int j;
-
-    i = game->x;
-    j = game->y + 1;
-    printf("Dentro de move_right: %d, %d", i, j);
-   // swap_positions(&game->map[i][j], &game->map[x][y], 'P', '0');
-}
-
-
-
 
 int main(int argc, char **argv)
 {
