@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 21:33:04 by azamario          #+#    #+#             */
-/*   Updated: 2021/09/28 21:25:01 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/02 21:14:00 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@
 # define FILE_EXIT "textures/E.xpm"
 # define FILE_PLAYER "textures/P.xpm"
 
+# define X_EVENT_KEY_PRESS 2
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115 
+# define KEY_D 100
+
+# define KEY_UP 65362
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
+
+
 typedef struct s_game
 {
     void    *img;
@@ -46,8 +58,13 @@ typedef struct s_game
     void    *collectible;
     void    *exit;
     void    *player;
+    int     moves;
+    int     x;
+    int     y;
     
 }t_game; 
+
+
 
 
 char    **read_map(char *path_to_file);
@@ -64,6 +81,12 @@ void    initialize_image(t_game *game);
 void    draw_image(t_game *game, void *image, int x, int y);
 
 void    map_render(char **map, t_game *game);
+
+int	key_hook(int keycode, t_game *game);
+
+void    move_player(t_game *game, int x, int y);
+void swap_positions (char *current_pos, char *next_pos, char current_value, char next_value);
+
 
 
 #endif

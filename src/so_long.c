@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:43:47 by azamario          #+#    #+#             */
-/*   Updated: 2021/09/25 19:09:10 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/02 19:35:34 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,41 @@ In computer programming, the term hooking covers a range of techniques used to a
 Hooking is used for many purposes, including debugging and extending functionality. Examples might include 
     intercepting keyboard or mouse event messages before they reach an application, or intercepting operating 
     system calls in order to monitor behavior or modify the function of an application or another component. 
-
-
 */
+
+void    game_init(t_game *game)
+{
+    game->img = 0;
+    game->mlx = 0;
+    game->map = 0;
+    game->window_ptr = 0;
+    game->window_width = 0;
+    game->window_height = 0;
+    game->image_width = 0;
+    game->image_height = 0;
+    game->wall = 0;
+    game->empty_space = 0;
+    game->collectible = 0;
+    game->exit = 0;
+    game->player = 0;
+    game->moves = 0;
+    game->x = 0;
+    game->y = 0;    
+}
+
+void move_right(t_game *game)
+{
+    int i;
+    int j;
+
+    i = game->x;
+    j = game->y + 1;
+    printf("Dentro de move_right: %d, %d", i, j);
+   // swap_positions(&game->map[i][j], &game->map[x][y], 'P', '0');
+}
+
+
+
 
 int main(int argc, char **argv)
 {
@@ -32,28 +64,20 @@ int main(int argc, char **argv)
     {
         t_game  game;
 
+        game_init(&game);
         game.mlx = mlx_init();
-
-        game.map = read_map(argv[1]);
-        map_counter(game.map, &game);
-        init_window(&game);
+        game.map = read_map(argv[1]);   //gnl   
+        map_counter(game.map, &game);   //descobre altura e largura do mapa
+        init_window(&game);             //mlx_new_window
+ 
         print_map(game.map); 
 
-        initialize_image(&game);
-        map_render(game.map, &game);
-      
+        initialize_image(&game);        //mlx_xpm_file_to_image
+   
+        map_render(game.map, &game);    //mlx_put_image_to_window
+
+        mlx_key_hook(game.window_ptr, key_hook, &game);
+        
         mlx_loop(game.mlx);
     }
-
-/*
-    void    *mlx_ptr;
-    void    *win_ptr;
-  
-    mlx_ptr = mlx_init();
-    win_ptr = mlx_new_window(mlx_ptr, 700, 700, "Testing stuff");
-    mlx_loop(mlx_ptr);
-
-    valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./so_long
-*/
-
 }
