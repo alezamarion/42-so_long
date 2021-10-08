@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 17:32:03 by azamario          #+#    #+#             */
-/*   Updated: 2021/09/28 21:24:12 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/08 17:57:35 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,8 @@ void    initialize_image(t_game *game) //coloca a imagem dentro da struct
     game->empty_space = convert_image(FILE_EMPTY, game);
     game->collectible = convert_image(FILE_COLLECTIBLE, game);
     game->exit = convert_image(FILE_EXIT, game);
-    game->player = convert_image(FILE_PLAYER, game);
+    game->player_u= convert_image(FILE_PLAYER_U, game);
+    game->player_d = convert_image(FILE_PLAYER_D, game);
+    game->player_l = convert_image(FILE_PLAYER_L, game);
+    game->player_r = convert_image(FILE_PLAYER_R, game);
 }

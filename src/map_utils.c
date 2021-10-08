@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 11:08:08 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/02 21:14:02 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/08 15:12:04 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,36 @@ void    map_counter(char **map, t_game *game)
         i++;
     }
     game->window_width = ft_strlen(*map);
-    printf("Altura do Mapa: %d\n", game->window_height);
-    printf("Largura do Mapa: %d\n", game->window_width);
+}
+
+void print_map (char **map)
+{
+    int i;
+    i = 0;
+    printf("\n------------- Mapa: ------------\n");
+    while (map[i])
+    {
+        printf("%s\n", map[i]);
+        i++;
+    }
+    printf("\n");
+}
+
+void    count_collectibles(char **map, t_game *game)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while(map[i])
+    {
+        j = 0;
+        while(map[i][j])
+        {
+            if(map[i][j] == 'C')
+                game->collectibles++;
+            j++;
+        }
+        i++;
+    }
 }

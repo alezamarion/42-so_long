@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:43:47 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/02 21:53:02 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/08 17:40:49 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,46 +24,17 @@ Hooking is used for many purposes, including debugging and extending functionali
     system calls in order to monitor behavior or modify the function of an application or another component. 
 */
 
-void    game_init(t_game *game)
-{
-    game->img = 0;
-    game->mlx = 0;
-    game->map = 0;
-    game->window_ptr = 0;
-    game->window_width = 0;
-    game->window_height = 0;
-    game->image_width = 0;
-    game->image_height = 0;
-    game->wall = 0;
-    game->empty_space = 0;
-    game->collectible = 0;
-    game->exit = 0;
-    game->player = 0;
-    game->moves = 0;
-    game->x = 0;
-    game->y = 0;    
-}
 
 int main(int argc, char **argv)
 {
+    t_game  game;
+
     if (argc == 2)
     {
-        t_game  game;
+        game.map = read_map(argv[1]);   //gnl 
 
-        game_init(&game);
-        game.mlx = mlx_init();
-        game.map = read_map(argv[1]);   //gnl   
-        map_counter(game.map, &game);   //descobre altura e largura do mapa
-        init_window(&game);             //mlx_new_window
- 
-        print_map(game.map); 
-
-        initialize_image(&game);        //mlx_xpm_file_to_image
-   
-        map_render(game.map, &game);    //mlx_put_image_to_window
-
-        mlx_key_hook(game.window_ptr, key_hook, &game);
-        
+        init_game(&game);
+        event_handler(&game);
         mlx_loop(game.mlx);
     }
 }

@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 18:49:17 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/02 21:13:51 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/08 16:49:19 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,7 @@ void    map_render(char **map, t_game *game)
             else if (map[i][j] == 'E')
                 draw_image(game, game->exit, i, j);
             else if (map[i][j] == 'P')
-            {
-                draw_image(game, game->player, i, j);
-                game->x = j;
-                game->y = i;
-            }
+                hook_player(game, i, j);
             j++;
         }
         i++;
