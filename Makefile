@@ -18,7 +18,8 @@ INCLUDE_DIR = includes
 
 SRC_FILES = so_long.c draw_image.c event_handler.c exit_game.c game_utils.c hook_player.c \
 			init_game.c init_image.c init_window.c map_render.c map_utils.c move_player.c \
-			player_update.c read_map.c show_info.c
+			player_update.c read_map.c show_info.c validate_map.c map_check_init.c		  \
+			map_check.c 
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
@@ -46,7 +47,7 @@ $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
 run:
-	./so_long "assets/maps/test2.ber"
+	./so_long "assets/maps/invalid_walls_up.ber"
 
 valgrind:
 	valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./so_long
