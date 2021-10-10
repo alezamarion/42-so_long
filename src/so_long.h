@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 21:33:04 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/09 16:22:15 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/10 18:52:04 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ typedef struct s_map
     int map_col_size;
     int player;
     int exit;
-    int collectible;    
+    int collectible; 
+    int space;   
 }t_map;
 
 
@@ -94,7 +95,6 @@ int         has_valid_chars(char **map);
 int         has_minimum_chars(char **map, t_map *valid_map);
 int         is_rectangular(char **map);
 int         has_valid_extension(char *file);
-
 
 //init_game
 void        init_game(t_game *game);
