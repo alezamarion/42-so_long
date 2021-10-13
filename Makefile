@@ -47,7 +47,7 @@ $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
 run:
-	./so_long "assets/maps/invalid_char_three_players.ber"
+	./so_long "assets/maps/map.ber"
 
 valgrind:
 	valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./so_long
