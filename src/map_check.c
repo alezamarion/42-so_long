@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 22:22:24 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/10 18:57:25 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/10 19:10:40 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,32 @@ int has_valid_walls(char **map, t_map *valid_map)
 }
 */
 
+int has_valid_walls(char **map, t_map *m)
+{
+    int  i;
+    int  j;
+
+    while (map[m->map_col_size])
+        m->map_col_size++;
+    m->map_col_size--;
+    m->map_row_size = ft_strlen(*map) - 1;
+    i = 0;
+    while(map[i])
+    {
+        j = 0;
+        while(map[i][j])
+        {   
+            if (map[0][j] != '1' || 
+                map[i][0] != '1' || map[i][m->map_row_size] != '1'
+                || map[m->map_col_size][j] != '1')
+                    return (0);
+            j++;
+        }
+        i++;
+    }
+    return (1);
+}
+
 int has_valid_chars(char **map)
 {
     int i;
@@ -60,7 +86,6 @@ int has_valid_chars(char **map)
     }
     return (1);
 }
-
 
 int has_minimum_chars(char **map, t_map *valid_map)
 {
@@ -90,34 +115,6 @@ int has_minimum_chars(char **map, t_map *valid_map)
     }
     return (0);
 }
- 
-
-int has_valid_walls(char **map, t_map *m)
-{
-    int  i;
-    int  j;
-
-    while (map[m->map_col_size])
-        m->map_col_size++;
-    m->map_col_size--;
-    m->map_row_size = ft_strlen(*map) - 1;
-    i = 0;
-    while(map[i])
-    {
-        j = 0;
-        while(map[i][j])
-        {   
-            if (map[0][j] != '1' || 
-                map[i][0] != '1' || map[i][m->map_row_size] != '1'
-                || map[m->map_col_size][j] != '1')
-                    return (0);
-            j++;
-        }
-        i++;
-    }
-    return (1);
-}
-
 
 int is_rectangular(char **map)
 {
