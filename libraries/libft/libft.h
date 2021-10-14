@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/14 18:05:41 by azamario          #+#    #+#             */
+/*   Updated: 2021/10/14 18:10:16 by azamario         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -14,8 +26,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <bsd/string.h>
-
-/* Part one - Libc functions */
 
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
@@ -44,8 +54,6 @@ char		*ft_strdup(const char *s1);
 int			ft_get_next_line(int fd, char **line);
 void		ft_super_free(void **ptr);
 
-/* Part two - Additional functions */
-
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
@@ -56,8 +64,6 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-
-/* Bonus part */
 
 typedef struct s_list
 {
