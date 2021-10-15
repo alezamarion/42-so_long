@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:43:47 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/15 11:12:21 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/15 17:44:55 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf("No map specified");
+		printf("No map specified\n");
 		exit (0);
 	}
 }

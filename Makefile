@@ -47,13 +47,16 @@ $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
 run:
-	./so_long "assets/maps/map.ber"
+	./so_long "assets/maps/test.ber"
 
 valgrind:
 	valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./so_long
 
 runv:
-	$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/map.ber
+	$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/test.ber
+
+runiv:
+	$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/invalid_map_et.ber
 
 resize:
 	mogrify -resize 32X32 $(IMG_DIR)/*.png && make img
