@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 11:08:08 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/15 11:07:25 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/15 16:11:43 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	count_collectibles(char **map, t_game *game)
 	int	i;
 	int	j;
 
+	game->collectibles = 0;
 	i = 0;
 	while (map[i])
 	{

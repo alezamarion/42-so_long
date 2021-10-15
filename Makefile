@@ -53,7 +53,7 @@ valgrind:
 	valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./so_long
 
 runv:
-	$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all  --track-origins=yes ./so_long assets/maps/map.ber
+	$(MAKE) && valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes ./so_long assets/maps/map.ber
 
 resize:
 	mogrify -resize 32X32 $(IMG_DIR)/*.png && make img
