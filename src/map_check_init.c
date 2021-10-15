@@ -6,18 +6,18 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 22:17:32 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/15 07:42:08 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/15 10:48:21 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    map_check_init(t_map *map)
+void	map_check_init(t_map *map)
 {
-    map->collectible = 0;
-    map->exit = 0;
-    map->player = 0;
-    map->space = 0;
-    map->map_row_size = 0;
-    map->map_col_size = 0;
+	map->collectible = 0;
+	map->exit = 0;
+	map->player = 0;
+	map->space = 0;
+	map->map_row_size = 0;
+	map->map_col_size = 0;
 }
