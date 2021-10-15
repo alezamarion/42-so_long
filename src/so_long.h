@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 21:33:04 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/15 11:18:04 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/15 18:28:19 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ typedef struct s_map
 
 char		**read_map(char *path_to_file);
 
-//validate_map
 int			is_valid_map(char **map, char *file);
 void		map_check_init(t_map *map);
 int			has_valid_walls(char **map, t_map *m);
@@ -94,7 +93,6 @@ int			has_minimum_chars(char **map, t_map *valid_map);
 int			is_rectangular(char **map);
 int			has_valid_extension(char *file);
 
-//init_game
 void		init_game(t_game *game);
 void		map_counter(char **map, t_game *game);
 void		count_collectibles(char **map, t_game *game);
@@ -103,7 +101,6 @@ void		initialize_image(t_game *game);
 void		*convert_image(char *image, t_game *game);
 void		map_render(char **map, t_game *game);
 
-//event_handler
 void		event_handler(t_game *game);
 int			key_press(int keycode, t_game *game);
 void		free_map(char **map);
@@ -115,7 +112,6 @@ void		hook_player(t_game *game, int i, int j);
 void		show_info(t_game *game);
 void		print_map(char **map);
 
-//get_next_line
 char		*get_next_line(int fd);
 
 #endif
