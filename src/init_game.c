@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 14:46:25 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/08 17:28:04 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/15 07:35:03 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	initialize_data(t_game *game)
 	game->moves = 0;
 	game->collected = 0;
 	game->end_game = 0;
-
+	game->player_direction = 'r';
 }
 
 static void	initialize_rendering(t_game *game)

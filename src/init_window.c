@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 16:32:01 by azamario          #+#    #+#             */
-/*   Updated: 2021/09/28 21:22:31 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:39:03 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void    init_window(t_game *game)
 {
-    game->window_ptr = mlx_new_window(game->mlx, game->window_width * SPRITE_SIZE, game->window_height * SPRITE_SIZE, "so_long");
+    game->window_ptr = mlx_new_window
+        (game->mlx, game->window_width * SPRITE_SIZE,
+            game->window_height * SPRITE_SIZE, "so_long");
 }

@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/25 17:32:03 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/08 17:57:35 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:38:11 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void    *convert_image(char *image, t_game *game)
 {
-    game->img = mlx_xpm_file_to_image(game->mlx, image, &game->image_width, &game->image_height);
-    
+    game->img = mlx_xpm_file_to_image
+        (game->mlx, image, &game->image_width, &game->image_height);    
     return (game->img);
     //image = mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height)
 }

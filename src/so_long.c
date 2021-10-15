@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 15:43:47 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/08 22:39:08 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/14 19:50:27 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 
     if (argc == 2)
     {
-        game.map = read_map(argv[1]);   //gnl 
+        game.map = read_map(argv[1]);
         if (is_valid_map(game.map, argv[1]))
         {
             init_game(&game);

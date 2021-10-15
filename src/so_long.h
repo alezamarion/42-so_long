@@ -6,7 +6,7 @@
 /*   By: azamario <azamario@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 21:33:04 by azamario          #+#    #+#             */
-/*   Updated: 2021/10/13 18:18:03 by azamario         ###   ########.fr       */
+/*   Updated: 2021/10/15 09:46:05 by azamario         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@
 
 # define SPRITE_SIZE 32
 
-# define FILE_WALL "textures/1.xpm"
-# define FILE_EMPTY "textures/0.xpm"
-# define FILE_COLLECTIBLE "textures/C.xpm"
-# define FILE_EXIT "textures/E.xpm"
-# define FILE_PLAYER_U "textures/P_U.xpm"
-# define FILE_PLAYER_D "textures/P_D.xpm"
-# define FILE_PLAYER_L "textures/P_L.xpm"
-# define FILE_PLAYER_R "textures/P_R.xpm"
+# define FILE_WALL "textures/bart_wall.xpm"
+# define FILE_EMPTY "textures/bart_space.xpm"
+# define FILE_COLLECTIBLE "textures/bart_collectible.xpm"
+# define FILE_EXIT "textures/bart_exit.xpm"
+# define FILE_PLAYER_U "textures/bart_up.xpm"
+# define FILE_PLAYER_D "textures/bart_down.xpm"
+# define FILE_PLAYER_L "textures/bart_left.xpm"
+# define FILE_PLAYER_R "textures/bart_right.xpm"
 
 # define X_EVENT_KEY_PRESS 2
 # define X_EVENT_DESTROY_NOTIFY 17
@@ -60,7 +60,6 @@ typedef struct s_game
     void    *empty_space;
     void    *collectible;
     void    *exit;
-    void    *player;
     int     moves;
     int     x;
     int     y;
@@ -111,11 +110,14 @@ int         key_press(int keycode, t_game *game);
 void        free_map(char **map);
 int         exit_game(t_game *game);
 void        player_update(int keycode, t_game *game);
-void        swap_positions (char *current_pos, char *next_pos, char current_value, char next_value);
+//static void swap_positions (char *current_pos, char *next_pos, char current_value, char next_value);
 void        handle_situation(t_game *game, int x, int y);
 void        draw_image(t_game *game, void *image, int x, int y);
 void        hook_player(t_game *game, int i, int j);
 void        show_info(t_game *game);
 void        print_map(char **map);
+
+//get_next_line
+char	    *get_next_line(int fd);
 
 #endif
