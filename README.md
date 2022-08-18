@@ -6,7 +6,7 @@ SoLong is an individual project at 42 that requires us to create a very small 2D
 
 ## Gameplay
 
-<img src="so_long42.gif">
+<img src="so_long_42.gif">
 
 ## Badge
 
@@ -19,7 +19,7 @@ SoLong is an individual project at 42 that requires us to create a very small 2D
 
 ## My grade
 
-<img src="score_so_long.png">
+<img src="score__so_long.png">
 
 # 42-so_long
 The aim of this project is to code a 2D Game :D <br>
